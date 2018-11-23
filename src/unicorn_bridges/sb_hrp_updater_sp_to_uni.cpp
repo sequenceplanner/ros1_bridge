@@ -41,7 +41,7 @@ int main(int argc, char * argv[])
   auto ros2_node = rclcpp::Node::make_shared("ros2_sb_updater_sp_to_uni");
 
   // bridge one example topic
-  std::string topic_name = "unicorn_roscontrol/robot2/updater_sp_to_uni";
+  std::string topic_name = "unicorn_roscontrol/updater_sp_to_uni";
   std::string ros1_type_name = "ros1_unicorn_2019/UpdaterSPToUni";
   std::string ros2_type_name = "unicorn_ros2_messages/UpdaterSPToUni";
   size_t queue_size = 10;
