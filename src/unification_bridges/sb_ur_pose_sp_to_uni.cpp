@@ -33,22 +33,22 @@
 int main(int argc, char * argv[])
 {
   // ROS 1 node
-  ros::init(argc, argv, "ros1_sb_ur_updater_uni_to_sp");
+  ros::init(argc, argv, "ros1_sb_ur_pose_unidriver_sp_to_uni");
   ros::NodeHandle ros1_node;
 
   // ROS 2 node
   rclcpp::init(argc, argv);
-  auto ros2_node = rclcpp::Node::make_shared("ros2_sb_ur_updater_uni_to_sp");
+  auto ros2_node = rclcpp::Node::make_shared("ros2_sb_ur_pose_unidriver_sp_to_uni");
 
   // bridge one example topic
-  std::string topic_name = "unification_roscontrol/updater_uni_to_sp";
-  std::string ros1_type_name = "ros1_unification_2019/UpdaterUniToSP";
-  std::string ros2_type_name = "unification_ros2_messages/UpdaterUniToSP";
+  std::string topic_name = "unification_roscontrol/ur_pose_unidriver_sp_to_uni";
+  std::string ros1_type_name = "ros1_unification_2019/URPoseSPToUni";
+  std::string ros2_type_name = "unification_ros2_messages/URPoseSPToUni";
   size_t queue_size = 10;
 
-  auto handles = ros1_bridge::create_bridge_from_1_to_2(
-    ros1_node, ros2_node, ros1_type_name, topic_name, queue_size,
-    ros2_type_name, topic_name, queue_size);
+  auto handles = ros1_bridge::create_bridge_from_2_to_1(
+    ros2_node, ros1_node, ros2_type_name, topic_name, queue_size,
+    ros1_type_name, topic_name, queue_size);
 
   // ROS 1 asynchronous spinner
   ros::AsyncSpinner async_spinner(1);

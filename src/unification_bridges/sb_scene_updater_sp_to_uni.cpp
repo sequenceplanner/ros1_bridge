@@ -33,17 +33,17 @@
 int main(int argc, char * argv[])
 {
   // ROS 1 node
-  ros::init(argc, argv, "ros1_sb_ur_moveit_sp_to_uni");
+  ros::init(argc, argv, "ros1_sb_scene_updater_sp_to_uni");
   ros::NodeHandle ros1_node;
 
   // ROS 2 node
   rclcpp::init(argc, argv);
-  auto ros2_node = rclcpp::Node::make_shared("ros2_sb_ur_moveit_sp_to_uni");
+  auto ros2_node = rclcpp::Node::make_shared("ros2_sb_scene_updater_sp_to_uni");
 
   // bridge one example topic
-  std::string topic_name = "unification_roscontrol/ur_moveit_sp_to_unidriver";
-  std::string ros1_type_name = "ros1_unification_2019/MoveItSPToUni";
-  std::string ros2_type_name = "unification_ros2_messages/MoveItSPToUni";
+  std::string topic_name = "unification_roscontrol/scene_updater_sp_to_uni";
+  std::string ros1_type_name = "ros1_unification_2019/SceneUpdaterSPToUni";
+  std::string ros2_type_name = "unification_ros2_messages/SceneUpdaterSPToUni";
   size_t queue_size = 10;
 
   auto handles = ros1_bridge::create_bridge_from_2_to_1(

@@ -154,46 +154,46 @@ target_link_libraries(static_bridge
 
 # unicifation bridge exec gen
 # --------------------------------------------
-custom_executable(sb_ur_moveit_sp_to_uni
-  "src/unification_bridges/sb_ur_moveit_sp_to_uni.cpp"
+custom_executable(sb_pose_updater_sp_to_uni
+  "src/unification_bridges/sb_pose_updater_sp_to_uni.cpp"
   ROS1_DEPENDENCIES
   TARGET_DEPENDENCIES ${ros2_message_packages})
-target_link_libraries(sb_ur_moveit_sp_to_uni
+target_link_libraries(sb_pose_updater_sp_to_uni
   ${PROJECT_NAME})
 
-custom_executable(sb_ur_moveit_uni_to_sp
-  "src/unification_bridges/sb_ur_moveit_uni_to_sp.cpp"
+custom_executable(sb_pose_updater_uni_to_sp
+  "src/unification_bridges/sb_pose_updater_uni_to_sp.cpp"
   ROS1_DEPENDENCIES
   TARGET_DEPENDENCIES ${ros2_message_packages})
-target_link_libraries(sb_ur_moveit_uni_to_sp
+target_link_libraries(sb_pose_updater_uni_to_sp
   ${PROJECT_NAME})
 
-custom_executable(sb_robotiq_uni_to_sp
-  "src/unification_bridges/sb_robotiq_uni_to_sp.cpp"
+custom_executable(sb_scene_updater_sp_to_uni
+  "src/unification_bridges/sb_scene_updater_sp_to_uni.cpp"
   ROS1_DEPENDENCIES
   TARGET_DEPENDENCIES ${ros2_message_packages})
-target_link_libraries(sb_robotiq_uni_to_sp
+target_link_libraries(sb_scene_updater_sp_to_uni
   ${PROJECT_NAME})
 
-custom_executable(sb_ur_updater_sp_to_uni
-  "src/unification_bridges/sb_ur_updater_sp_to_uni.cpp"
+custom_executable(sb_scene_updater_uni_to_sp
+  "src/unification_bridges/sb_scene_updater_uni_to_sp.cpp"
   ROS1_DEPENDENCIES
   TARGET_DEPENDENCIES ${ros2_message_packages})
-target_link_libraries(sb_ur_updater_sp_to_uni
+target_link_libraries(sb_scene_updater_uni_to_sp
   ${PROJECT_NAME})
 
-custom_executable(sb_ur_updater_uni_to_sp
-  "src/unification_bridges/sb_ur_updater_uni_to_sp.cpp"
+custom_executable(sb_ur_pose_sp_to_uni
+  "src/unification_bridges/sb_ur_pose_sp_to_uni.cpp"
   ROS1_DEPENDENCIES
   TARGET_DEPENDENCIES ${ros2_message_packages})
-target_link_libraries(sb_ur_updater_uni_to_sp
+target_link_libraries(sb_ur_pose_sp_to_uni
   ${PROJECT_NAME})
 
-custom_executable(sb_robotiq_sp_to_uni
-  "src/unification_bridges/sb_robotiq_sp_to_uni.cpp"
+custom_executable(sb_ur_pose_uni_to_sp
+  "src/unification_bridges/sb_ur_pose_uni_to_sp.cpp"
   ROS1_DEPENDENCIES
   TARGET_DEPENDENCIES ${ros2_message_packages})
-target_link_libraries(sb_robotiq_sp_to_uni
+target_link_libraries(sb_ur_pose_uni_to_sp
   ${PROJECT_NAME})
 #---------------------------------------------
 
