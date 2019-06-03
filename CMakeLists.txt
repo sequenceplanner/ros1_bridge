@@ -154,6 +154,34 @@ target_link_libraries(static_bridge
 
 # unicifation bridge exec gen
 # --------------------------------------------
+custom_executable(sb_humans_kinect
+  "src/unification_bridges/sb_humans_kinect.cpp"
+  ROS1_DEPENDENCIES
+  TARGET_DEPENDENCIES ${ros2_message_packages})
+target_link_libraries(sb_humans_kinect
+  ${PROJECT_NAME})
+
+custom_executable(sb_recu_sp_to_uni
+  "src/unification_bridges/sb_recu_sp_to_uni.cpp"
+  ROS1_DEPENDENCIES
+  TARGET_DEPENDENCIES ${ros2_message_packages})
+target_link_libraries(sb_recu_sp_to_uni
+  ${PROJECT_NAME})
+
+  custom_executable(sb_gestures_sp_to_uni
+  "src/unification_bridges/sb_gestures_sp_to_uni.cpp"
+  ROS1_DEPENDENCIES
+  TARGET_DEPENDENCIES ${ros2_message_packages})
+target_link_libraries(sb_gestures_sp_to_uni
+  ${PROJECT_NAME})
+
+  custom_executable(sb_gestures_uni_to_sp
+  "src/unification_bridges/sb_gestures_uni_to_sp.cpp"
+  ROS1_DEPENDENCIES
+  TARGET_DEPENDENCIES ${ros2_message_packages})
+target_link_libraries(sb_gestures_uni_to_sp
+  ${PROJECT_NAME})
+
 custom_executable(sb_pose_updater_sp_to_uni
   "src/unification_bridges/sb_pose_updater_sp_to_uni.cpp"
   ROS1_DEPENDENCIES
